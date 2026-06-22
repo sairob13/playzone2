@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayZone - Site de Jogos</title>
+  <link rel="stylesheet" href="CSS/ESTILO.CSS">
+</head>
+<body>
+  <header class="topo">
+    <a class="marca" href="PlayZone.HTML">PlayZone</a>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="#jogos">Jogos</a>
+      <a href="#ranking">Ranking</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-conteudo">
+        <p class="categoria">Arcade online</p>
+        <h1>Escolha seu jogo e entre na partida.</h1>
+        <p class="resumo">Um site simples de jogos com visual moderno, cards de destaque e um mini-game pronto para jogar no navegador.</p>
+        <a class="botao" href="#arena">Jogar agora</a>
+      </div>
+      <div class="controle" aria-hidden="true">
+        <div class="controle-corpo">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="jogos" class="secao">
+      <div class="secao-titulo">
+        <p class="categoria">Biblioteca</p>
+        <h2>Jogos em destaque</h2>
+      </div>
+
+      <div class="grade-jogos">
+        <article class="jogo-card">
+          <div class="arte alvo"></div>
+          <div>
+            <h3>Caca ao Alvo</h3>
+            <p>Mire com o mouse, dispare a flecha e acerte o alvo em movimento.</p>
+          </div>
+          <a href="#arena">Jogar</a>
+        </article>
+
+        <article class="jogo-card">
+          <div class="arte corrida"></div>
+          <div>
+            <h3>Turbo Rua</h3>
+            <p>Desvie dos obstaculos em uma corrida rapida estilo arcade.</p>
+          </div>
+          <a href="#turbo">Jogar</a>
+        </article>
+
+        <article class="jogo-card">
+          <div class="arte memoria"></div>
+          <div>
+            <h3>Memoria Pixel</h3>
+            <p>Encontre os pares e teste sua concentracao rodada por rodada.</p>
+          </div>
+          <a href="#memoria">Jogar</a>
+        </article>
+
+        <article class="jogo-card">
+          <div class="arte futebol"></div>
+          <div>
+            <h3>Copa dos Penaltis</h3>
+            <p>Escolha uma selecao, passe pelos grupos e decida tudo nos penaltis.</p>
+          </div>
+          <a href="#futebol">Jogar</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="arena" class="arena">
+      <div class="painel-jogo">
+        <div class="painel-cabecalho">
+          <div>
+            <p class="categoria">Mini-game</p>
+            <h2>Caca ao Alvo</h2>
+          </div>
+          <div class="acoes-jogo">
+            <label>
+              Dificuldade
+              <select id="dificuldadeAlvo">
+                <option value="facil">Facil</option>
+                <option value="medio" selected>Medio</option>
+                <option value="dificil">Dificil</option>
+              </select>
+            </label>
+            <button id="botaoIniciar" type="button">Iniciar partida</button>
+          </div>
+        </div>
+
+        <div class="placar" aria-live="polite">
+          <div>
+            <strong id="pontos">0</strong>
+            <span>Pontos</span>
+          </div>
+          <div>
+            <strong id="tempo">20</strong>
+            <span>Segundos</span>
+          </div>
+          <div>
+            <strong id="recorde">0</strong>
+            <span>Recorde</span>
+          </div>
+        </div>
+
+        <div id="tabuleiro" class="tabuleiro">
+          <div id="mira" class="mira" aria-hidden="true"></div>
+          <div id="arqueiro" class="arqueiro" aria-hidden="true">
+            <div class="arco-pixel"></div>
+            <div class="flecha-pronta"></div>
+          </div>
+          <div id="flecha" class="flecha-disparo" aria-hidden="true"></div>
+          <button id="alvo" class="alvo-botao" type="button" aria-label="Alvo do jogo"></button>
+          <p id="mensagemJogo">Clique em iniciar, mire com o mouse e dispare no alvo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="turbo" class="arena">
+      <div class="painel-jogo">
+        <div class="painel-cabecalho">
+          <div>
+            <p class="categoria">Corrida</p>
+            <h2>Turbo Rua</h2>
+          </div>
+          <div class="acoes-jogo">
+            <label>
+              Dificuldade
+              <select id="dificuldadeTurbo">
+                <option value="facil">Facil</option>
+                <option value="medio" selected>Medio</option>
+                <option value="dificil">Dificil</option>
+              </select>
+            </label>
+            <button id="botaoTurbo" type="button">Iniciar corrida</button>
+          </div>
+        </div>
+
+        <div class="placar" aria-live="polite">
+          <div>
+            <strong id="turboPontos">0</strong>
+            <span>Pontos</span>
+          </div>
+          <div>
+            <strong id="turboTempo">30</strong>
+            <span>Segundos</span>
+          </div>
+          <div>
+            <strong id="turboRecorde">0</strong>
+            <span>Recorde</span>
+          </div>
+        </div>
+
+        <div id="pista" class="pista">
+          <div class="faixa"></div>
+          <div id="carro" class="carro"></div>
+          <div id="obstaculo" class="obstaculo"></div>
+          <p id="mensagemTurbo">Use as setas do teclado ou os botoes para desviar.</p>
+        </div>
+
+        <div class="controles-corrida">
+          <button type="button" data-direcao="esquerda">Esquerda</button>
+          <button type="button" data-direcao="direita">Direita</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="memoria" class="arena">
+      <div class="painel-jogo">
+        <div class="painel-cabecalho">
+          <div>
+            <p class="categoria">Puzzle</p>
+            <h2>Memoria Pixel</h2>
+          </div>
+          <div class="acoes-jogo">
+            <label>
+              Dificuldade
+              <select id="dificuldadeMemoria">
+                <option value="facil">Facil</option>
+                <option value="medio" selected>Medio</option>
+                <option value="dificil">Dificil</option>
+              </select>
+            </label>
+            <button id="botaoMemoria" type="button">Iniciar memoria</button>
+          </div>
+        </div>
+
+        <div class="placar" aria-live="polite">
+          <div>
+            <strong id="memoriaMovimentos">0</strong>
+            <span>Movimentos</span>
+          </div>
+          <div>
+            <strong id="memoriaPares">0/6</strong>
+            <span>Pares</span>
+          </div>
+          <div>
+            <strong id="memoriaRecorde">0</strong>
+            <span>Melhor jogo</span>
+          </div>
+        </div>
+
+        <div id="gradeMemoria" class="grade-memoria" aria-label="Cartas do jogo da memoria"></div>
+        <p id="mensagemMemoria" class="mensagem-area">Clique em iniciar para embaralhar as cartas.</p>
+      </div>
+    </section>
+
+    <section id="futebol" class="arena">
+      <div class="painel-jogo painel-futebol">
+        <div class="painel-cabecalho">
+          <div>
+            <p class="categoria">Futebol</p>
+            <h2>Copa dos Penaltis</h2>
+          </div>
+          <div class="acoes-jogo">
+            <label>
+              Sua selecao
+              <select id="selecaoFutebol"></select>
+            </label>
+            <button id="botaoCopa" type="button">Iniciar copa</button>
+          </div>
+        </div>
+
+        <div class="placar placar-futebol" aria-live="polite">
+          <div>
+            <strong id="faseCopa">Grupo</strong>
+            <span>Fase</span>
+          </div>
+          <div>
+            <strong id="placarCopa">0 x 0</strong>
+            <span>Penaltis</span>
+          </div>
+          <div>
+            <strong id="turnoCopa">Chute</strong>
+            <span>Turno</span>
+          </div>
+        </div>
+
+        <div class="copa-layout">
+          <aside class="painel-torneio">
+            <h3>Campanha</h3>
+            <ol id="listaFases" class="lista-fases"></ol>
+            <h3>Grupo</h3>
+            <div id="grupoCopa" class="grupo-copa"></div>
+          </aside>
+
+          <div class="campo-penalti">
+            <div class="gol">
+              <div id="goleiro" class="goleiro"></div>
+              <button type="button" class="zona-gol" data-zona="esquerda">Esquerda</button>
+              <button type="button" class="zona-gol" data-zona="centro">Centro</button>
+              <button type="button" class="zona-gol" data-zona="direita">Direita</button>
+            </div>
+            <div id="bola" class="bola"></div>
+            <div class="marca-penalti"></div>
+            <p id="mensagemCopa" class="mensagem-area">Escolha sua selecao e inicie a copa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ranking" class="secao ranking">
+      <div class="secao-titulo">
+        <p class="categoria">Competicao</p>
+        <h2>Ranking da semana</h2>
+      </div>
+      <ol>
+        <li><span>Sairo</span><strong>42 pts</strong></li>
+        <li><span>NinjaBR</span><strong>35 pts</strong></li>
+        <li><span>PixelMax</span><strong>28 pts</strong></li>
+      </ol>
+    </section>
+
+    <section id="sobre" class="secao sobre">
+      <div class="secao-titulo">
+        <p class="categoria">Projeto</p>
+        <h2>Seu primeiro portal gamer</h2>
+      </div>
+      <p>Esta versao melhora a base do projeto original com HTML correto, visual responsivo, navegacao interna e JavaScript para uma partida simples.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>PlayZone - criado a partir do seu primeiro site.</p>
+  </footer>
+
+  <script src="JAVA SCRIPTS/JOGO.JS"></script>
+</body>
+</html>

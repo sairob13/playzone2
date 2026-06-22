@@ -1,0 +1,1040 @@
+:root {
+  --fundo: #10141f;
+  --painel: #171d2b;
+  --painel-claro: #20283a;
+  --texto: #f3f6ff;
+  --suave: #aeb8d1;
+  --destaque: #37d67a;
+  --destaque-2: #ffcf4a;
+  --perigo: #ff5f7e;
+  --azul: #61a5ff;
+  --borda: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(55, 214, 122, 0.18), transparent 32rem),
+    linear-gradient(135deg, #10141f 0%, #182034 52%, #121827 100%);
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 4vw, 3.5rem);
+  background: rgba(16, 20, 31, 0.88);
+  border-bottom: 1px solid var(--borda);
+  backdrop-filter: blur(12px);
+}
+
+.marca {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--destaque);
+}
+
+.menu {
+  display: flex;
+  gap: 0.75rem;
+  color: var(--suave);
+  font-size: 0.95rem;
+}
+
+.menu a {
+  padding: 0.55rem 0.75rem;
+  border-radius: 6px;
+}
+
+.menu a:hover {
+  background: var(--painel-claro);
+  color: var(--texto);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 26rem);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  min-height: 76vh;
+  padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 4vw, 3.5rem);
+}
+
+.hero-conteudo {
+  max-width: 46rem;
+}
+
+.categoria {
+  margin: 0 0 0.75rem;
+  color: var(--destaque);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.35rem, 7vw, 5.4rem);
+  line-height: 0.98;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+}
+
+h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+}
+
+.resumo,
+.jogo-card p,
+.sobre p,
+footer {
+  color: var(--suave);
+  line-height: 1.6;
+}
+
+.resumo {
+  max-width: 34rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.08rem;
+}
+
+.botao,
+.painel-cabecalho button,
+.jogo-card a,
+.controles-corrida button,
+.carta-memoria {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.8rem 1.1rem;
+  border: 0;
+  border-radius: 6px;
+  background: var(--destaque);
+  color: #07110c;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.botao:hover,
+.painel-cabecalho button:hover,
+.jogo-card a:hover,
+.controles-corrida button:hover,
+.carta-memoria:hover {
+  filter: brightness(1.08);
+}
+
+.controle {
+  display: grid;
+  place-items: center;
+}
+
+.controle-corpo {
+  position: relative;
+  width: min(80vw, 24rem);
+  aspect-ratio: 1.35;
+  border: 1px solid var(--borda);
+  border-radius: 4rem;
+  background:
+    linear-gradient(135deg, #273147, #111827),
+    repeating-linear-gradient(90deg, transparent, transparent 18px, rgba(255, 255, 255, 0.05) 19px);
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.35);
+}
+
+.controle-corpo::before,
+.controle-corpo::after {
+  content: "";
+  position: absolute;
+  top: 44%;
+  width: 4.5rem;
+  height: 1rem;
+  border-radius: 999px;
+  background: #0b101b;
+}
+
+.controle-corpo::before {
+  left: 3rem;
+}
+
+.controle-corpo::after {
+  right: 3rem;
+  transform: rotate(90deg);
+}
+
+.controle-corpo span {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--destaque-2);
+}
+
+.controle-corpo span:nth-child(1) {
+  right: 6.1rem;
+  top: 4.2rem;
+}
+
+.controle-corpo span:nth-child(2) {
+  right: 3.4rem;
+  top: 6.9rem;
+  background: #61a5ff;
+}
+
+.controle-corpo span:nth-child(3) {
+  right: 8.8rem;
+  top: 6.9rem;
+  background: #ff6b8b;
+}
+
+.controle-corpo span:nth-child(4) {
+  right: 6.1rem;
+  top: 9.6rem;
+  background: var(--destaque);
+}
+
+.secao,
+.arena {
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 4vw, 3.5rem);
+}
+
+.secao-titulo {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.grade-jogos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.jogo-card,
+.painel-jogo,
+.ranking li {
+  border: 1px solid var(--borda);
+  background: rgba(23, 29, 43, 0.84);
+}
+
+.jogo-card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+  min-height: 25rem;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1rem 2.6rem rgba(0, 0, 0, 0.18);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.jogo-card:hover {
+  border-color: rgba(55, 214, 122, 0.55);
+  transform: translateY(-0.2rem);
+}
+
+.arte {
+  position: relative;
+  min-height: 12rem;
+  border-radius: 6px;
+  background-color: var(--painel-claro);
+  background-size: 24px 24px, cover;
+  overflow: hidden;
+}
+
+.arte::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 42%, rgba(0, 0, 0, 0.22));
+}
+
+.arte.alvo {
+  background:
+    radial-gradient(circle, #ffffff 0 8%, #ff5f7e 9% 18%, #ffffff 19% 29%, #37d67a 30% 42%, transparent 43%),
+    radial-gradient(circle at 70% 25%, rgba(255, 207, 74, 0.5), transparent 22%),
+    linear-gradient(135deg, #20283a, #10141f);
+}
+
+.arte.corrida {
+  background:
+    linear-gradient(90deg, transparent 47%, #ffcf4a 48% 52%, transparent 53%),
+    repeating-linear-gradient(0deg, #283149 0 18px, #1a2133 19px 40px);
+}
+
+.arte.memoria {
+  background:
+    radial-gradient(circle at 25% 25%, #ffcf4a 0 11%, transparent 12%),
+    radial-gradient(circle at 75% 75%, #37d67a 0 11%, transparent 12%),
+    linear-gradient(135deg, rgba(255, 207, 74, 0.9) 25%, transparent 25% 75%, rgba(255, 207, 74, 0.9) 75%),
+    linear-gradient(135deg, #61a5ff 25%, #20283a 25% 75%, #61a5ff 75%);
+  background-position: 0 0, 20px 20px;
+  background-size: 40px 40px;
+}
+
+.arte.futebol {
+  background:
+    radial-gradient(circle at 50% 70%, #ffffff 0 7%, transparent 8%),
+    linear-gradient(90deg, transparent 0 20%, rgba(255, 255, 255, 0.72) 20% 22%, transparent 22% 78%, rgba(255, 255, 255, 0.72) 78% 80%, transparent 80%),
+    linear-gradient(0deg, transparent 0 24%, rgba(255, 255, 255, 0.72) 24% 27%, transparent 27%),
+    repeating-linear-gradient(90deg, #235d2f 0 2.2rem, #2f7a3d 2.2rem 4.4rem);
+}
+
+.arena {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.painel-jogo {
+  max-width: 58rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border-radius: 8px;
+  box-shadow: 0 1.4rem 4rem rgba(0, 0, 0, 0.22);
+}
+
+.painel-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.acoes-jogo {
+  display: flex;
+  align-items: end;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.acoes-jogo label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--suave);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+}
+
+.acoes-jogo select {
+  min-height: 2.75rem;
+  min-width: 8.5rem;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: var(--painel-claro);
+  color: var(--texto);
+  font: inherit;
+  font-weight: 700;
+  padding: 0 0.75rem;
+}
+
+.placar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.placar div {
+  padding: 1rem;
+  border-radius: 6px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent),
+    var(--painel-claro);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.placar strong,
+.placar span {
+  display: block;
+}
+
+.placar strong {
+  font-size: 1.8rem;
+}
+
+.placar span {
+  color: var(--suave);
+  font-size: 0.9rem;
+}
+
+.tabuleiro {
+  position: relative;
+  min-height: 24rem;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.24) 0 8%, transparent 9%),
+    radial-gradient(circle at 18% 26%, rgba(231, 238, 190, 0.95) 0 8%, transparent 9%),
+    radial-gradient(circle at 48% 22%, rgba(220, 233, 177, 0.9) 0 7%, transparent 8%),
+    radial-gradient(circle at 77% 28%, rgba(229, 239, 194, 0.85) 0 8%, transparent 9%),
+    linear-gradient(90deg, transparent 0 8%, #273018 8% 11%, transparent 11% 23%, #3a2b22 23% 27%, transparent 27% 42%, #564035 42% 47%, transparent 47% 63%, #2e271f 63% 67%, transparent 67% 82%, #4a3529 82% 86%, transparent 86%),
+    linear-gradient(90deg, transparent 0 13%, #6b4f3f 13% 16%, transparent 16% 31%, #8f6b58 31% 34%, transparent 34% 53%, #6f5144 53% 56%, transparent 56% 73%, #7b5d4a 73% 76%, transparent 76%),
+    radial-gradient(circle at 8% 18%, #2f431f 0 12%, transparent 13%),
+    radial-gradient(circle at 24% 15%, #445f2b 0 15%, transparent 16%),
+    radial-gradient(circle at 43% 17%, #31491f 0 16%, transparent 17%),
+    radial-gradient(circle at 64% 16%, #4b6630 0 15%, transparent 16%),
+    radial-gradient(circle at 84% 18%, #31491f 0 16%, transparent 17%),
+    linear-gradient(180deg, #7f9d68 0 42%, #526f43 43% 65%, #24411f 66% 100%);
+  background-size:
+    auto,
+    auto,
+    auto,
+    auto,
+    100% 100%,
+    100% 100%,
+    auto,
+    auto,
+    auto,
+    auto,
+    auto,
+    auto;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.tabuleiro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 1.1rem, rgba(38, 72, 26, 0.45) 1.1rem 1.45rem, transparent 1.45rem 2.2rem),
+    radial-gradient(circle at 12% 86%, #23441e 0 8%, transparent 9%),
+    radial-gradient(circle at 32% 82%, #315a27 0 9%, transparent 10%),
+    radial-gradient(circle at 58% 86%, #294c22 0 10%, transparent 11%),
+    radial-gradient(circle at 84% 82%, #3b6a2f 0 9%, transparent 10%),
+    linear-gradient(180deg, transparent 0 68%, #1f391b 69% 82%, #183015 83% 100%);
+  opacity: 0.96;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tabuleiro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0 18%, rgba(42, 28, 22, 0.82) 18% 21%, transparent 21% 54%, rgba(45, 29, 22, 0.86) 54% 57%, transparent 57% 91%, rgba(39, 27, 21, 0.8) 91% 94%, transparent 94%),
+    linear-gradient(180deg, rgba(20, 30, 16, 0.42), transparent 28%, rgba(13, 30, 17, 0.52));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.alvo-botao {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 0;
+  border-radius: 50%;
+  background:
+    linear-gradient(90deg, transparent 0 48%, rgba(255, 255, 255, 0.28) 49% 51%, transparent 52%),
+    linear-gradient(0deg, transparent 0 48%, rgba(255, 255, 255, 0.28) 49% 51%, transparent 52%),
+    radial-gradient(circle, #ffffff 0 12%, #ff5f7e 13% 30%, #ffffff 31% 48%, #37d67a 49% 68%, #10141f 69% 100%);
+  box-shadow:
+    0 0 0 8px rgba(55, 214, 122, 0.16),
+    0 0 2rem rgba(55, 214, 122, 0.35);
+  transform: translate(-50%, -50%);
+  transition: width 160ms ease, height 160ms ease, box-shadow 160ms ease, filter 120ms ease;
+  cursor: crosshair;
+  image-rendering: pixelated;
+  pointer-events: none;
+  opacity: 0.72;
+  z-index: 4;
+}
+
+.alvo-botao::before {
+  content: "";
+  position: absolute;
+  inset: -0.45rem;
+  border: 0.22rem solid rgba(5, 8, 18, 0.86);
+  border-radius: 50%;
+}
+
+.alvo-botao::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2.3rem;
+  width: 0.45rem;
+  height: 2.3rem;
+  background: #4a3529;
+  box-shadow: 0 0 0 0.16rem #050812;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.alvo-botao.acertado {
+  filter: brightness(1.45);
+  box-shadow:
+    0 0 0 12px rgba(255, 207, 74, 0.24),
+    0 0 2.8rem rgba(255, 207, 74, 0.7);
+}
+
+.tabuleiro.ativo::after {
+  inset: 1rem;
+  background: none;
+  border: 1px dashed rgba(232, 242, 194, 0.28);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.tabuleiro.ativo .alvo-botao {
+  opacity: 1;
+}
+
+.mira {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 2px solid rgba(255, 207, 74, 0.9);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.mira::before,
+.mira::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 207, 74, 0.9);
+}
+
+.mira::before {
+  left: 50%;
+  top: -0.55rem;
+  width: 2px;
+  height: calc(100% + 1.1rem);
+}
+
+.mira::after {
+  left: -0.55rem;
+  top: 50%;
+  width: calc(100% + 1.1rem);
+  height: 2px;
+}
+
+.tabuleiro.ativo .mira {
+  display: block;
+}
+
+.arqueiro {
+  --angulo: 0rad;
+  position: absolute;
+  left: 1.7rem;
+  bottom: 2.1rem;
+  display: none;
+  width: 4.9rem;
+  height: 4.9rem;
+  transform: rotate(var(--angulo));
+  transform-origin: 1.25rem 2.45rem;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.tabuleiro.ativo .arqueiro {
+  display: block;
+}
+
+.arco-pixel {
+  position: absolute;
+  left: 0.55rem;
+  top: 0.32rem;
+  width: 2.66rem;
+  height: 4.2rem;
+  border: 0.46rem solid #d99d37;
+  border-left: 0;
+  border-radius: 0 2.8rem 2.8rem 0;
+  box-shadow:
+    0 0 0 0.16rem #050812,
+    inset -0.3rem 0 0 #ffcf4a;
+  image-rendering: pixelated;
+}
+
+.arco-pixel::before {
+  content: "";
+  position: absolute;
+  left: -0.18rem;
+  top: -0.14rem;
+  width: 0.13rem;
+  height: 4.34rem;
+  background: #f3f6ff;
+  box-shadow: 0 0 0 0.09rem #050812;
+}
+
+.flecha-pronta,
+.flecha-disparo {
+  position: absolute;
+  width: 3.75rem;
+  height: 0.3rem;
+  background: #b6a579;
+  box-shadow: 0 0 0 0.11rem #050812;
+}
+
+.flecha-pronta {
+  left: 1.05rem;
+  top: 2.28rem;
+}
+
+.flecha-pronta::before,
+.flecha-disparo::before {
+  content: "";
+  position: absolute;
+  right: -0.56rem;
+  top: -0.32rem;
+  width: 0;
+  height: 0;
+  border-left: 0.7rem solid #8eb0cc;
+  border-top: 0.46rem solid transparent;
+  border-bottom: 0.46rem solid transparent;
+  filter: drop-shadow(0 0 0 #050812);
+}
+
+.flecha-pronta::after,
+.flecha-disparo::after {
+  content: "";
+  position: absolute;
+  left: -0.63rem;
+  top: -0.39rem;
+  width: 0.84rem;
+  height: 1rem;
+  background:
+    linear-gradient(45deg, transparent 0 35%, #bdeeff 36% 64%, transparent 65%),
+    linear-gradient(-45deg, transparent 0 35%, #bdeeff 36% 64%, transparent 65%);
+}
+
+.flecha-disparo {
+  left: 0;
+  top: 0;
+  display: none;
+  transform-origin: left center;
+  z-index: 5;
+  pointer-events: none;
+  transition: transform 240ms linear;
+}
+
+.flecha-disparo.voando {
+  display: block;
+}
+
+#mensagemJogo {
+  position: absolute;
+  inset: auto 1rem 1rem;
+  margin: 0;
+  color: var(--suave);
+  text-align: center;
+  z-index: 6;
+}
+
+.pista {
+  position: relative;
+  min-height: 28rem;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(97, 165, 255, 0.22), transparent 16rem),
+    radial-gradient(circle at 80% 55%, rgba(255, 95, 126, 0.14), transparent 14rem),
+    linear-gradient(90deg, transparent 0 15%, rgba(255, 255, 255, 0.14) 15% 16%, transparent 16% 84%, rgba(255, 255, 255, 0.14) 84% 85%, transparent 85%),
+    linear-gradient(180deg, #20283a, #10141f);
+  overflow: hidden;
+}
+
+.faixa {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(180deg, transparent 0 2.1rem, var(--destaque-2) 2.1rem 4rem);
+  clip-path: inset(0 49% 0 49%);
+  opacity: 0.95;
+  animation: pista-luz 600ms linear infinite;
+}
+
+.carro,
+.obstaculo {
+  position: absolute;
+  left: 50%;
+  width: 4.3rem;
+  height: 5.5rem;
+  border-radius: 0.8rem 0.8rem 0.35rem 0.35rem;
+  transform: translateX(-50%);
+  transition: left 120ms ease;
+}
+
+.carro {
+  bottom: 1.4rem;
+  background:
+    radial-gradient(circle at 25% 84%, #10141f 0 12%, transparent 13%),
+    radial-gradient(circle at 75% 84%, #10141f 0 12%, transparent 13%),
+    linear-gradient(90deg, #10141f 0 14%, transparent 15% 85%, #10141f 86%),
+    linear-gradient(180deg, #9bd0ff 0 22%, #61a5ff 23% 42%, #37d67a 43% 100%);
+  box-shadow:
+    0 0.8rem 1.3rem rgba(0, 0, 0, 0.35),
+    0 0 1.4rem rgba(97, 165, 255, 0.32);
+}
+
+.obstaculo {
+  top: -6rem;
+  display: none;
+  background:
+    repeating-linear-gradient(45deg, rgba(16, 20, 31, 0.45) 0 0.6rem, transparent 0.6rem 1.2rem),
+    linear-gradient(180deg, #ff5f7e 0 45%, #ffcf4a 46% 100%);
+  box-shadow: 0 0 1.3rem rgba(255, 95, 126, 0.38);
+}
+
+.pista.ativo .obstaculo {
+  display: block;
+}
+
+#mensagemTurbo {
+  position: absolute;
+  inset: auto 1rem 1rem;
+  margin: 0;
+  color: var(--suave);
+  text-align: center;
+}
+
+.controles-corrida {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.grade-memoria {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(4rem, 1fr));
+  gap: 0.75rem;
+  min-height: 24rem;
+  padding: 1rem;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(55, 214, 122, 0.16), transparent 16rem),
+    radial-gradient(circle at 80% 70%, rgba(97, 165, 255, 0.18), transparent 18rem),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    #111827;
+  background-size: 32px 32px;
+}
+
+.carta-memoria {
+  min-height: 5.2rem;
+  border: 1px solid var(--borda);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 34%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.08) 0 0.4rem, transparent 0.4rem 0.8rem),
+    var(--painel-claro);
+  color: var(--texto);
+  font-size: clamp(1.4rem, 5vw, 2.4rem);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.05);
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.carta-memoria.revelada,
+.carta-memoria.encontrada {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.55), transparent 20%),
+    linear-gradient(135deg, var(--destaque), var(--destaque-2));
+  color: #07110c;
+  transform: scale(0.98);
+}
+
+.carta-memoria.encontrada {
+  opacity: 0.72;
+  cursor: default;
+}
+
+.mensagem-area {
+  margin: 1rem 0 0;
+  color: var(--suave);
+  text-align: center;
+}
+
+.painel-futebol {
+  max-width: 70rem;
+}
+
+.placar-futebol strong {
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+}
+
+.copa-layout {
+  display: grid;
+  grid-template-columns: minmax(13rem, 18rem) minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.painel-torneio {
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: rgba(16, 20, 31, 0.78);
+}
+
+.painel-torneio h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.lista-fases {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-fases li,
+.grupo-copa div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  background: var(--painel-claro);
+  color: var(--suave);
+}
+
+.lista-fases li.atual,
+.grupo-copa div.voce {
+  color: var(--texto);
+  border-color: rgba(55, 214, 122, 0.55);
+  box-shadow: inset 0 0 0 1px rgba(55, 214, 122, 0.18);
+}
+
+.grupo-copa {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.campo-penalti {
+  position: relative;
+  min-height: 31rem;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, transparent 0 8%, rgba(255, 255, 255, 0.18) 8% 9%, transparent 9% 91%, rgba(255, 255, 255, 0.18) 91% 92%, transparent 92%),
+    linear-gradient(0deg, transparent 0 18%, rgba(255, 255, 255, 0.18) 18% 19%, transparent 19%),
+    repeating-linear-gradient(90deg, #226232 0 4rem, #2f7a3d 4rem 8rem);
+  overflow: hidden;
+}
+
+.campo-penalti::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6rem;
+  width: min(42vw, 19rem);
+  height: min(42vw, 19rem);
+  border: 3px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.gol {
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: min(82%, 38rem);
+  height: 11rem;
+  border: 0.45rem solid #f3f6ff;
+  border-bottom-width: 0.25rem;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    rgba(10, 14, 22, 0.28);
+  background-size: 1.1rem 1.1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.28);
+  transform: translateX(-50%);
+}
+
+.zona-gol {
+  border: 0;
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+}
+
+.zona-gol:hover {
+  background: rgba(255, 207, 74, 0.18);
+}
+
+.goleiro {
+  position: absolute;
+  left: 50%;
+  bottom: 0.8rem;
+  width: 3.5rem;
+  height: 4.8rem;
+  border-radius: 1rem 1rem 0.35rem 0.35rem;
+  background:
+    radial-gradient(circle at 50% 14%, #ffd7a8 0 13%, transparent 14%),
+    linear-gradient(90deg, transparent 0 20%, #10141f 20% 28%, transparent 28% 72%, #10141f 72% 80%, transparent 80%),
+    linear-gradient(180deg, #ffcf4a 0 48%, #10141f 49% 100%);
+  box-shadow: 0 0 0 0.22rem #10141f;
+  transform: translateX(-50%);
+  transition: left 220ms ease;
+  z-index: 2;
+}
+
+.goleiro.esquerda {
+  left: 20%;
+}
+
+.goleiro.direita {
+  left: 80%;
+}
+
+.bola {
+  position: absolute;
+  left: 50%;
+  bottom: 5.6rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 36% 35%, #10141f 0 12%, transparent 13%),
+    radial-gradient(circle at 64% 60%, #10141f 0 10%, transparent 11%),
+    #f3f6ff;
+  box-shadow: 0 0 0 0.18rem #10141f;
+  transform: translate(-50%, 0);
+  transition: left 240ms ease, bottom 240ms ease;
+  z-index: 3;
+}
+
+.marca-penalti {
+  position: absolute;
+  left: 50%;
+  bottom: 5rem;
+  width: 4.5rem;
+  height: 1rem;
+  border-top: 3px solid rgba(255, 255, 255, 0.62);
+  transform: translateX(-50%);
+}
+
+.campo-penalti.defesa .zona-gol:hover {
+  background: rgba(97, 165, 255, 0.22);
+}
+
+@keyframes pista-luz {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 4rem;
+  }
+}
+
+.ranking ol {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 42rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ranking li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.sobre {
+  max-width: 62rem;
+}
+
+footer {
+  padding: 2rem clamp(1rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--borda);
+}
+
+@media (max-width: 820px) {
+  .topo,
+  .painel-cabecalho,
+  .secao-titulo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .acoes-jogo {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .hero,
+  .grade-jogos {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .placar {
+    grid-template-columns: 1fr;
+  }
+
+  .copa-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .grade-memoria {
+    grid-template-columns: repeat(3, minmax(4rem, 1fr));
+  }
+}
